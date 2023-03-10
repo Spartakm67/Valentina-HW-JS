@@ -5,25 +5,22 @@ myDiv.className = 'buttons';
 myDiv.style.background = 'coral';
 myDiv.style.textAlign = 'center';
 
-let y = (Math.random() * (1000 - 1) + 1).toFixed();
+let i = (Math.random() * (1000 - 1) + 1).toFixed();
 
 const friends = document.createElement('div');
 friends.className = 'friends';
 friends.style.background = '#9fd3c7';
 friends.style.textAlign = 'center';
 friends.style.height = '50px';
-friends.innerText = `Кількість друзів: ${y}`
+friends.innerText = `Кількість друзів: ${i}`
 
-
-
-let i = 0;
 
 const buttonsNames = ['Додати в друзі', 'Написати повідомлення', 'Запропонувати роботу']
 
 buttonsNames.map(buttonName => {
     let button = document.createElement('button');
     button.className = 'btn btn-success';
-    button.innerText = `${buttonName} ${i}` ;
+    button.innerText = `${buttonName}`;
     button.style.margin = '5px';
     button.style.borderRadius = '5px';
     myDiv.appendChild(button);
@@ -38,6 +35,7 @@ const btn = document.getElementsByTagName('button')[0];
 
 btn.onclick = (event) => {
     event.target.innerText = `Очікується підтвердження`;
+    friends.innerText = `Кількість друзів: ${++i}`;
 };
 
 // btn.onclick = (event) => {
