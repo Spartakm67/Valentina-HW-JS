@@ -1,47 +1,52 @@
-// const myDiv = document.createElement('div');
-// myDiv.className = 'buttons';
-// myDiv.style.background = 'coral';
-// myDiv.style.textAlign = 'center'
-
-// let i = 0;
-
-// ['Button', 'Button', 'Button'].map(buttonName => {
-//     let button = document.createElement('button');
-//     button.className = 'btn btn-success';
-//     button.innerText = `${buttonName} ${i}` ;
-//     button.style.margin = '5px'
-//     myDiv.appendChild(button);
-// })
-
+// create elements
 
 const myDiv = document.createElement('div');
 myDiv.className = 'buttons';
 myDiv.style.background = 'coral';
-myDiv.style.textAlign = 'center'
+myDiv.style.textAlign = 'center';
+
+let y = (Math.random() * (1000 - 1) + 1).toFixed();
+
+const friends = document.createElement('div');
+friends.className = 'friends';
+friends.style.background = '#9fd3c7';
+friends.style.textAlign = 'center';
+friends.style.height = '50px';
+friends.innerText = `Кількість друзів: ${y}`
+
+
 
 let i = 0;
 
-['Button', 'Button', 'Button'].map(buttonName => {
+const buttonsNames = ['Додати в друзі', 'Написати повідомлення', 'Запропонувати роботу']
+
+buttonsNames.map(buttonName => {
     let button = document.createElement('button');
     button.className = 'btn btn-success';
-    button.innerText = ${buttonName} ${i} ;
-    button.style.margin = '5px'
+    button.innerText = `${buttonName} ${i}` ;
+    button.style.margin = '5px';
+    button.style.borderRadius = '5px';
     myDiv.appendChild(button);
 })
 
 document.getElementsByTagName('body')[0].appendChild(myDiv);
+myDiv.after(friends);
 
 // events
 
 const btn = document.getElementsByTagName('button')[0];
 
-
 btn.onclick = (event) => {
-    event.target.innerText = Button ${++i};
+    event.target.innerText = `Очікується підтвердження`;
 };
 
+// btn.onclick = (event) => {
+//     event.target.innerText = `Button ${++i}`;
+// };
+
 btn.addEventListener('click', (myButtonEvent) => {
-    myButtonEvent.target.style.background = 'black';
+    myButtonEvent.target.style.background = '#00bbf0';
+    myButtonEvent.target.style.color = '#f95959';
     myButtonEvent.target.disabled = true;
 });
 
@@ -60,6 +65,7 @@ let colors = ['red', 'green', 'blue'];
 const btn2 = document.getElementsByTagName('button')[1];
 
 btn2.onclick = (event) => {
+    event.target.style.background = `blue`;
     let newDiv = document.createElement('div');
     newDiv.className = 'dynamic';
     newDiv.style.background = colors[
@@ -70,16 +76,5 @@ btn2.onclick = (event) => {
 };
 
 
-// <!DOCTYPE html>
-// <html lang="en">
-// <head>
-//     <meta charset="UTF-8">
-//     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-//     <script type="text/javascript" src="document.js" defer></script>
-//     <title>Lesson 27</title>
-// </head>
-// <body>
-// </body>
-// </html>
 
 
