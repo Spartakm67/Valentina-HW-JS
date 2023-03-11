@@ -26,3 +26,13 @@
       font-size: 1.2rem;                         ;
     }
 
+    .friends {
+      background: #9fd3c7;
+      text-align: center;
+      height: 40px;
+      text-shadow: 2px 2px 4px #113f67;
+      font-size: 20px;
+    }
+
+    
+
